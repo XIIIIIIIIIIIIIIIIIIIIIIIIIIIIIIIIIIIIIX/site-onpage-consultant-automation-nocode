@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jonas Moreau – Consultant Automatisation NoCode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #f97316;
+            --neutral: #f3f4f6;
+            --dark: #1f2937;
+            --radius: 8px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 5rem 1.5rem 3rem;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5rem; margin: 0 0 .5rem; }
+        header p { font-size: 1.25rem; margin: 0; opacity: .9; }
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,.95);
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: .75rem 0;
+        }
+        #nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: .25rem .5rem;
+        }
+        section { padding: 3rem 1.5rem; max-width: 1000px; margin: auto; }
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+            padding: 1.5rem;
+        }
+        button, .btn {
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            padding: .75rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--radius);
+            text-decoration: none;
+            display: inline-block;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input, textarea {
+            padding: .75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: inherit;
+            resize: vertical;
+        }
+        label { font-weight: 600; font-size: .9rem; }
+        .testimonial {
+            font-style: italic;
+            color: #555;
+            margin: .5rem 0 1rem;
+        }
+        .author { font-weight: 600; color: #000; margin-top: .25rem; }
+        footer {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: .875rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav id="nav">
+    <a href="#home">Accueil</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Témoignages</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+    <h1>Automatisez vos processus<br><span style="color:#f97316;">sans écrire une ligne de code</span></h1>
+    <p>Je conçois et déploie des workflows intelligents via Airtable, Make, Zapier et n8n.</p>
+    <a href="#contact" class="btn" style="margin-top:1.5rem;">Démarrer un projet</a>
+</header>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>CRM dynamique pour agence immobilière</h3>
+            <p>Connexion automatique Airtable ↔ Pipedrive, génération de rapports PDF et envoi d'emails post-vente.</p>
+        </div>
+        <div class="card">
+            <h3>Plateforme de recrutement automatisée</h3>
+            <p>Sourcing LinkedIn, filtrage Notion, calendrier Calendly, notification Slack. Gain x4 en délai de recrutement.</p>
+        </div>
+        <div class="card">
+            <h3>SaaS sans dév back-end</h3>
+            <p>Frontend Bubble + API Stripe + Webhooks n8n. MVP livré en 3 semaines, 750 comptes en 2 mois.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2>Témoignages</h2>
+    <div class="testimonial card">
+        <p>“Grâce à Jonas, nos campagnes d’e-commerce passent de Google Sheet à Klaviyo en un clic. Nous avons économisé 400 h/an.”</p>
+        <div class="author">— Claire G., CMO chez CinqPour100</div>
+    </div>
+    <div class="testimonial card">
+        <p>“À partir d’Airtable il a créé une suite de bots Slack prévoyant le stock avec 24 h d’avance. Inestimable.”</p>
+        <div class="author">— Rico A., Supply Chain Lead</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+        <label>Nom <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Projet <textarea name="message" rows="4" required></textarea></label>
+        <button>Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    © 2024 Jonas Moreau – Consultant en automatisation NoCode
+</footer>
+
+<script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Merci ! Je vous recontacte sous 24 h.');
+        form.reset();
+    });
+</script>
+</body>
+</html>
